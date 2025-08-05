@@ -1,0 +1,9 @@
+{
+    "fullname": "Репьев Егор Денисович",
+    "age": "26 лет.",
+    "position": "Преподаватель и инженер-программист в ГАПОУ СО «Нижнетагильский торгово-экономический колледж».",
+    "skills": "Full-stack web-разработчик со следующим стэком: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS.",
+    "devops": "Опытный DevOps с навыками работы с Linux, Bash, Docker, Docker Compose.",
+    "about": "Обо мне",
+    "self-employment": "Информация о самозанятости"
+}

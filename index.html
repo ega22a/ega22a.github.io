@@ -28,12 +28,12 @@
                     <div class="w-full h-full bg-[url(/assets/avatar.jpg)] bg-cover bg-no-repeat [mask-image:url(/assets/avatar-mask.svg)] mask-cover mask-center mask-no-repeat"></div>
                 </div>
                 <div class="absolute bottom-0 left-0">
-                    <a href="#">
+                    <a href="#" data-i18n-switcher>
                         <lord-icon src="/assets/icons/wired-outline-27-globe-hover-rotate.json" trigger="hover" class="w-6 h-6"></lord-icon>
                     </a>
                 </div>
             </div>
-            <h1 class="text-2xl font-bold text-center leading-8">Репьев Егор Денисович</h1>
+            <h1 class="text-2xl font-bold text-center leading-8" data-i18n-key="fullname">Репьев Егор Денисович</h1>
             <nav>
                 <ul class="inline-flex items-center justify-center gap-3">
                     <li>
@@ -64,20 +64,21 @@
                 </ul>
             </nav>
             <aside class="text-base leading-6 text-center space-y-3">
-                <p>26 лет.</p>
-                <p>Преподаватель и инженер-программист в ГАПОУ СО &laquo;Нижнетагильский торгово-экономический колледж&raquo;.</p>
-                <p>Full-stack web-разработчик со следующим стэком: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS.</p>
-                <p>Опытный DevOps с навыками работы с Linux, Bash, Docker, Docker Compose.</p>
+                <p data-i18n-key="age">26 лет.</p>
+                <p data-i18n-key="position">Преподаватель и инженер-программист в ГАПОУ СО &laquo;Нижнетагильский торгово-экономический колледж&raquo;.</p>
+                <p data-i18n-key="skills">Full-stack web-разработчик со следующим стэком: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS.</p>
+                <p data-i18n-key="devops">Опытный DevOps с навыками работы с Linux, Bash, Docker, Docker Compose.</p>
             </aside>
         </section>
         <nav class="bg-gray-100 outline-gray-600 outline-2 p-6 gap-6 rounded-xl shadow-md w-11/12 md:w-4/6 lg:w-6/12 2xl:w-4/12">
             <ul>
-                <li><a class="text-blue-600 hover:underline" href="#">Обо мне</a></li>
-                <li><a class="text-blue-600 hover:underline" href="#">Информация о самозанятости</a></li>
+                <li><a class="text-blue-600 hover:underline" data-i18n-key="about" href="#">Обо мне</a></li>
+                <li><a class="text-blue-600 hover:underline" data-i18n-key="self-employment" href="#">Информация о самозанятости</a></li>
             </ul>
         </nav>
     </main>
 
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
