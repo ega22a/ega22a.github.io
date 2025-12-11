@@ -21,11 +21,8 @@
     <main class="flex w-screen h-screen items-center justify-center flex-col gap-6">
         <section class="bg-gray-100 outline-gray-600 outline-2 p-6 gap-6 rounded-xl shadow-md w-11/12 md:w-4/6 lg:w-6/12 2xl:w-4/12 flex flex-col items-center animate-fade-down animate-once">
             <div class="flex items-center justify-center relative">
-                <div class="relative w-40 h-40">
-                    <div class="absolute inset-0 pointer-events-none overflow-hidden">
-                        <img src="./assets/avatar-mask.svg" class="w-full h-full animate-spin-slow">
-                    </div>
-                    <div class="w-full h-full bg-[url(/assets/avatar.jpg)] bg-cover bg-no-repeat [mask-image:url(/assets/avatar-mask.svg)] mask-cover mask-center mask-no-repeat"></div>
+                <div class="relative w-40 h-40 overflow-hidden [mask-image:url(/assets/avatar-mask.svg)] mask-cover mask-center mask-no-repeat animate-spin-slow">
+                    <div class="w-full h-full bg-[url(/assets/avatar.jpg)] bg-cover bg-center animate-spin-reverse"></div>
                 </div>
                 <div class="absolute bottom-0 left-0">
                     <a href="#" data-i18n-switcher>
@@ -64,23 +61,17 @@
                 </ul>
             </nav>
             <aside class="text-base leading-6 text-center space-y-3">
-                <p data-i18n-key="age">26 лет.</p>
+                <p data-i18n-key="age">27 лет.</p>
                 <p data-i18n-key="position">Преподаватель и инженер-программист в ГАПОУ СО &laquo;Нижнетагильский торгово-экономический колледж&raquo;.</p>
-                <p data-i18n-key="skills">Full-stack web-разработчик со следующим стэком: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS.</p>
+                <p data-i18n-key="skills">Full-stack web-разработчик со следующим стэком: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS, Svelte, SvelteKit.</p>
                 <p data-i18n-key="devops">Опытный DevOps с навыками работы с Linux, Bash, Docker, Docker Compose.</p>
             </aside>
         </section>
         <nav class="bg-gray-100 outline-gray-600 outline-2 p-6 gap-6 rounded-xl shadow-md w-11/12 md:w-4/6 lg:w-6/12 2xl:w-4/12 animate-fade-up animate-once">
             <ul>
                 <li>
-                    <a class="group text-blue-600 transition duration-300 inline-block" href="#">
+                    <a id="aboutLink" class="group text-blue-600 transition duration-300 inline-block cursor-pointer" href="#">
                         <span data-i18n-key="about">Обо мне</span>
-                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px] bg-blue-600"></span>
-                    </a>
-                </li>
-                <li>
-                    <a class="group text-blue-600 transition duration-300 inline-block" href="#">
-                        <span data-i18n-key="self-employment">Информация о самозанятости</span>
                         <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px] bg-blue-600"></span>
                     </a>
                 </li>
@@ -88,7 +79,23 @@
         </nav>
     </main>
 
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Модальное окно -->
+    <div id="aboutModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] flex flex-col">
+            <div class="flex items-center justify-between p-6 border-b">
+                <h2 class="text-2xl font-bold" data-i18n-key="about">Обо мне</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-3xl leading-none">&times;</button>
+            </div>
+            <div id="modalContent" class="p-6 overflow-y-auto markdown-content">
+                <div class="flex items-center justify-center py-8">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/marked.min.js"></script>
+    <script src="/js/lordicon.js"></script>
     <script src="/js/script.js"></script>
 </body>
 </html>
