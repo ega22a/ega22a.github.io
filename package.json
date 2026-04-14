@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "@lordicon/element": "^2.0.1",
-    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/cli": "^4.2.2",
     "lottie-web": "^5.13.0",
-    "tailwindcss": "^4.1.11",
+    "tailwindcss": "^4.2.2",
     "tailwindcss-animated": "^2.0.0"
   }
 }
