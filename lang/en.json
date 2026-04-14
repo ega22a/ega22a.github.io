@@ -1,9 +1,9 @@
 {
     "fullname": "Repiev George Denisovich",
-    "age": "27 years old.",
-    "position": "Teacher and Software engineer at the Nizhny Tagil College of Trade and Economics.",
-    "skills": "Full-stack web-developer with the following stack: PHP, Laravel, Orchid Platform, Bootstrap, Tailwind CSS.",
-    "devops": "Experienced DevOps with skills in Linux, Bash, Docker, Docker Compose.",
-    "about": "About me",
-    "self-employment": "Self-employment information"
+    "role": "Full-stack · DevOps · Lecturer",
+    "position": "Head of Department of Information Resilience & Digital Innovation at Nizhny Tagil College of Trade and Economics",
+    "bio": "Building and deploying digital solutions for educational environments. Focused on web application architecture, DevOps practices, and IT infrastructure management.",
+    "stack_label": "Tech Stack",
+    "location": "Nizhny Tagil, Russia",
+    "about": "About me"
 }
