@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/styles.css?ver=5">
+    <link rel="stylesheet" href="/css/styles.css?ver=6">
 </head>
 <body>
     <div class="bg-aurora" aria-hidden="true"></div>
@@ -42,6 +42,7 @@
             <a href="#hero" class="nav-link is-active" data-i18n-key="nav_profile">Профиль</a>
             <a href="#about" class="nav-link" data-i18n-key="nav_about">Обо мне</a>
             <a href="#stack" class="nav-link" data-i18n-key="nav_stack">Стек</a>
+            <a href="#projects" class="nav-link" data-i18n-key="nav_projects">Проекты</a>
             <a href="#contact" class="nav-link" data-i18n-key="nav_contact">Контакты</a>
         </nav>
         <button data-i18n-switcher class="lang-btn">EN</button>
@@ -110,9 +111,19 @@
             </div>
         </section>
 
+        <section id="projects" class="slide projects-slide">
+            <div class="slide-inner">
+                <p class="slide-kicker">03 &mdash; <span data-i18n-key="nav_projects">Проекты</span></p>
+                <h2 class="giant-text giant-text-tight" data-i18n-key="projects_heading">Пет-проекты</h2>
+                <p class="contact-sub" data-i18n-key="projects_sub">Что делаю в свободное время</p>
+
+                <div id="projectsList" class="projects-list"></div>
+            </div>
+        </section>
+
         <section id="contact" class="slide contact-slide">
             <div class="slide-inner">
-                <p class="slide-kicker">03 &mdash; <span data-i18n-key="nav_contact">Контакты</span></p>
+                <p class="slide-kicker">04 &mdash; <span data-i18n-key="nav_contact">Контакты</span></p>
                 <h2 class="giant-text" data-i18n-key="contact_heading">Давайте на связь</h2>
                 <p class="contact-sub" data-i18n-key="contact_sub">Открыт к сотрудничеству и новым проектам</p>
 
@@ -167,6 +178,7 @@
         <a href="#hero" class="slide-dot is-active" aria-label="Профиль"></a>
         <a href="#about" class="slide-dot" aria-label="Обо мне"></a>
         <a href="#stack" class="slide-dot" aria-label="Стек"></a>
+        <a href="#projects" class="slide-dot" aria-label="Проекты"></a>
         <a href="#contact" class="slide-dot" aria-label="Контакты"></a>
     </div>
 
@@ -188,6 +200,6 @@
     </div>
 
     <script src="/js/marked.min.js?ver=1"></script>
-    <script src="/js/script.js?ver=3"></script>
+    <script src="/js/script.js?ver=4"></script>
 </body>
 </html>

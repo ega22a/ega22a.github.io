@@ -15,6 +15,19 @@
     "nav_profile": "Profile",
     "nav_about": "About",
     "nav_stack": "Stack",
+    "nav_projects": "Projects",
     "nav_contact": "Contact",
-    "back_to_top": "Back to top"
+    "back_to_top": "Back to top",
+    "projects_heading": "Pet projects",
+    "projects_sub": "What I build in my spare time",
+    "project_visit": "Visit",
+    "project_code": "Code",
+    "projects": [
+        {
+            "name": "Emodrom",
+            "description": "A web app for a psychology-based party game about emotions: the host console, a projector display, and every player's screen update live over WebSocket.",
+            "url": "https://emodrom.repiev.space",
+            "repo": "https://github.com/ega22a/emodrom"
+        }
+    ]
 }

@@ -15,6 +15,19 @@
     "nav_profile": "Профиль",
     "nav_about": "Обо мне",
     "nav_stack": "Стек",
+    "nav_projects": "Проекты",
     "nav_contact": "Контакты",
-    "back_to_top": "Наверх"
+    "back_to_top": "Наверх",
+    "projects_heading": "Пет-проекты",
+    "projects_sub": "Что делаю в свободное время",
+    "project_visit": "Открыть",
+    "project_code": "Код",
+    "projects": [
+        {
+            "name": "Эмодром",
+            "description": "Веб-сервис для психологической party-игры про эмоции: пульт ведущего, витрина для проектора и экран каждого игрока обновляются в реальном времени через WebSocket.",
+            "url": "https://emodrom.repiev.space",
+            "repo": "https://github.com/ega22a/emodrom"
+        }
+    ]
 }

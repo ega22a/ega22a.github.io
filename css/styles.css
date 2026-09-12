@@ -104,6 +104,13 @@ body {
     scrollbar-width: none;
 }
 
+@media (max-width: 640px) {
+    .nav-links {
+        justify-content: flex-start;
+        gap: 0.85rem;
+    }
+}
+
 .nav-links::-webkit-scrollbar { display: none; }
 
 .nav-link {
@@ -439,6 +446,68 @@ body {
     width: 640px;
     height: auto;
     border-radius: var(--radius);
+}
+
+/* ── Projects ─────────────────────── */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 640px;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.project-card {
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 6px);
+    background: var(--card);
+    color: var(--card-foreground);
+}
+
+.project-card h3 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    margin-bottom: 0.4rem;
+}
+
+.project-card p {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: calc(var(--radius) - 2px);
+    border: 1px solid var(--border);
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.project-link svg { flex-shrink: 0; }
+
+.project-link:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
 }
 
 /* ── Contact ─────────────────────── */
