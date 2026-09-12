@@ -5,5 +5,16 @@
     "bio": "Building and deploying digital solutions for educational environments. Focused on web application architecture, DevOps practices, and IT infrastructure management.",
     "stack_label": "Tech Stack",
     "location": "Nizhny Tagil, Russia",
-    "about": "About me"
+    "about": "About me",
+    "hero_greeting": "Nice to meet you",
+    "hero_cta": "Learn more",
+    "about_heading": "About me",
+    "read_more": "Read full bio",
+    "contact_heading": "Let's get in touch",
+    "contact_sub": "Open to collaboration and new projects",
+    "nav_profile": "Profile",
+    "nav_about": "About",
+    "nav_stack": "Stack",
+    "nav_contact": "Contact",
+    "back_to_top": "Back to top"
 }

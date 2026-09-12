@@ -5,112 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Репьев Егор Денисович</title>
 
-    <meta property="og:type" content="website">
+    <meta name="description" content="Заведующий отделением ИБиЦИ и преподаватель в НТТЭК. Full-stack веб-разработчик, DevOps-инженер, ментор.">
+    <meta name="theme-color" content="#a15a2e">
+
+    <meta property="og:type" content="profile">
     <meta property="og:title" content="Репьев Егор Денисович — Full-stack Developer & Lecturer">
     <meta property="og:description" content="Заведующий отделением ИБиЦИ и преподаватель в НТТЭК. Full-stack веб-разработчик, DevOps-инженер, ментор.">
     <meta property="og:url" content="https://repiev.space">
     <meta property="og:site_name" content="repiev.space">
     <meta property="og:locale" content="ru_RU">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@ega22a">
+    <meta property="og:image" content="https://repiev.space/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Репьев Егор Денисович — Full-stack Developer & Lecturer">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ega22a">
+    <meta name="twitter:title" content="Репьев Егор Денисович — Full-stack Developer & Lecturer">
+    <meta name="twitter:description" content="Заведующий отделением ИБиЦИ и преподаватель в НТТЭК. Full-stack веб-разработчик, DevOps-инженер, ментор.">
+    <meta name="twitter:image" content="https://repiev.space/assets/og-image.png">
+
+    <link rel="canonical" href="https://repiev.space">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/styles.css?ver=1">
+    <link rel="stylesheet" href="/css/styles.css?ver=5">
 </head>
 <body>
-    <main>
-        <div class="card">
+    <div class="bg-aurora" aria-hidden="true"></div>
 
-            <div class="avatar-wrapper">
-                <div class="avatar-ring"></div>
-                <img src="/assets/avatar.jpg" alt="Репьев Егор Денисович" class="avatar-img">
-            </div>
+    <header class="site-nav">
+        <a href="#hero" class="nav-logo">EG</a>
+        <nav class="nav-links">
+            <a href="#hero" class="nav-link is-active" data-i18n-key="nav_profile">Профиль</a>
+            <a href="#about" class="nav-link" data-i18n-key="nav_about">Обо мне</a>
+            <a href="#stack" class="nav-link" data-i18n-key="nav_stack">Стек</a>
+            <a href="#contact" class="nav-link" data-i18n-key="nav_contact">Контакты</a>
+        </nav>
+        <button data-i18n-switcher class="lang-btn">EN</button>
+    </header>
 
-            <div class="identity">
-                <h1 data-i18n-key="fullname">Репьев Егор Денисович</h1>
-                <div>
-                    <span class="role-badge" data-i18n-key="role">Full-stack · DevOps · Преподаватель</span>
+    <button class="slide-arrow slide-arrow-prev" aria-label="Назад" disabled>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="slide-arrow slide-arrow-next" aria-label="Вперёд">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <main class="slides">
+        <section id="hero" class="slide hero-slide">
+            <div class="slide-inner">
+                <div class="hero-identity">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-ring"></div>
+                        <img src="/assets/avatar.jpg" alt="Репьев Егор Денисович" class="avatar-img">
+                    </div>
+                    <div>
+                        <span class="role-badge" data-i18n-key="role">Full-stack · DevOps · Преподаватель</span>
+                        <h1 data-i18n-key="fullname">Репьев Егор Денисович</h1>
+                    </div>
                 </div>
-                <p class="position-text" data-i18n-key="position">Заведующий отделением ИБиЦИ и преподаватель в ГАПОУ СО «НТТЭК»</p>
-                <p class="location-text">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+
+                <h2 class="giant-text" data-i18n-key="hero_greeting">Рад знакомству</h2>
+
+                <a href="#about" class="hero-cta" aria-label="Узнать больше">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
                     </svg>
-                    <span data-i18n-key="location">Нижний Тагил, Россия</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="slide about-slide">
+            <div class="slide-inner">
+                <p class="slide-kicker">01 &mdash; <span data-i18n-key="about_heading">Обо мне</span></p>
+
+                <p class="giant-text giant-text-tight" data-i18n-key="bio">
+                    Разрабатываю и внедряю цифровые решения в образовательной среде. Специализируюсь на веб-приложениях, DevOps-практиках и управлении ИТ-инфраструктурой.
                 </p>
+
+                <div class="about-meta">
+                    <p class="position-text" data-i18n-key="position">Заведующий отделением ИБиЦИ и преподаватель в ГАПОУ СО «НТТЭК»</p>
+                    <p class="location-text">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span data-i18n-key="location">Нижний Тагил, Россия</span>
+                    </p>
+                    <a id="aboutLink" href="#" class="text-link" data-i18n-key="read_more">Читать полностью</a>
+                </div>
             </div>
+        </section>
 
-            <div class="divider"></div>
-
-            <p class="bio-text" data-i18n-key="bio">
-                Разрабатываю и внедряю цифровые решения в образовательной среде. Специализируюсь на веб-приложениях, DevOps-практиках и управлении ИТ-инфраструктурой.
-            </p>
-
-            <div class="divider"></div>
-
-            <p class="section-label" data-i18n-key="stack_label">Стек технологий</p>
-            <div class="stack-icons" style="margin-bottom: 1.25rem;">
-                <img src="https://skillicons.dev/icons?i=php,laravel,js,svelte,html,css,postgres,mysql,docker,bash,linux,git&theme=dark&perline=13" alt="Tech Stack" loading="lazy">
+        <section id="stack" class="slide stack-slide">
+            <div class="slide-inner">
+                <p class="slide-kicker">02 &mdash; <span data-i18n-key="stack_label">Стек технологий</span></p>
+                <div class="stack-icons">
+                    <img src="https://skillicons.dev/icons?i=php,laravel,js,svelte,html,css,postgres,mysql,docker,bash,linux,git&theme=dark&perline=6" alt="Tech Stack" loading="lazy">
+                </div>
             </div>
+        </section>
 
-            <div class="divider"></div>
+        <section id="contact" class="slide contact-slide">
+            <div class="slide-inner">
+                <p class="slide-kicker">03 &mdash; <span data-i18n-key="nav_contact">Контакты</span></p>
+                <h2 class="giant-text" data-i18n-key="contact_heading">Давайте на связь</h2>
+                <p class="contact-sub" data-i18n-key="contact_sub">Открыт к сотрудничеству и новым проектам</p>
 
-            <div class="social-row">
-                <!-- Email -->
-                <a href="mailto:repev.egor@nttek.ru" class="social-link" title="Email">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                    </svg>
-                </a>
-                <a href="https://ega22a.t.me" class="social-link" title="Telegram" target="_blank" rel="noopener">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/ega22a" class="social-link" title="GitHub" target="_blank" rel="noopener">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://nttek.ru/page/repev-egor-denisovic-143" class="social-link" title="НТТЭК" target="_blank" rel="noopener">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/ega22a/" class="social-link" title="Instagram" target="_blank" rel="noopener">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://www.x.com/ega22a" class="social-link" title="X (Twitter)" target="_blank" rel="noopener">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
+                <div class="contact-grid">
+                    <a href="mailto:repev.egor@nttek.ru" class="contact-link" title="Email">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        </svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://ega22a.t.me" class="contact-link" target="_blank" rel="noopener">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+                        </svg>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://github.com/ega22a" class="contact-link" target="_blank" rel="noopener">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://nttek.ru/page/repev-egor-denisovic-143" class="contact-link" target="_blank" rel="noopener">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+                            <path d="M22 10v6"/>
+                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+                        </svg>
+                        <span>НТТЭК</span>
+                    </a>
+                    <a href="https://www.instagram.com/ega22a/" class="contact-link" target="_blank" rel="noopener">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.x.com/ega22a" class="contact-link" target="_blank" rel="noopener">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        <span>X</span>
+                    </a>
+                </div>
+
+                <p class="footer-domain">repiev.space</p>
             </div>
-
-            <a id="aboutLink" href="#" class="about-btn" data-i18n-key="about">Обо мне</a>
-
-        </div>
-
-        <div class="card-footer">
-            <div class="footer-bar">
-                <span class="footer-domain">repiev.space</span>
-                <button data-i18n-switcher class="lang-btn">EN</button>
-            </div>
-        </div>
+        </section>
     </main>
+
+    <div class="slide-dots">
+        <a href="#hero" class="slide-dot is-active" aria-label="Профиль"></a>
+        <a href="#about" class="slide-dot" aria-label="Обо мне"></a>
+        <a href="#stack" class="slide-dot" aria-label="Стек"></a>
+        <a href="#contact" class="slide-dot" aria-label="Контакты"></a>
+    </div>
 
     <div id="aboutModal" class="modal-overlay">
         <div class="modal-box">
             <div class="modal-header">
                 <h2 class="modal-title" data-i18n-key="about">Обо мне</h2>
-                <button id="closeModal" class="modal-close">✕</button>
+                <button id="closeModal" class="modal-close" aria-label="Закрыть">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </button>
             </div>
             <div id="modalContent" class="modal-body markdown-content">
                 <div class="spinner"></div>
@@ -119,6 +188,6 @@
     </div>
 
     <script src="/js/marked.min.js?ver=1"></script>
-    <script src="/js/script.js?ver=1"></script>
+    <script src="/js/script.js?ver=3"></script>
 </body>
 </html>

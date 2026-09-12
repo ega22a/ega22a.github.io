@@ -5,9 +5,8 @@ module.exports = {
                 'spin-slow': 'spin 8s linear infinite',
             },
             fontFamily: {
-                'display': ['Syne', 'sans-serif'],
-                'body': ['DM Sans', 'sans-serif'],
-                'mono': ['JetBrains Mono', 'monospace'],
+                'display': ['Roboto Slab', 'serif'],
+                'body': ['Roboto', 'sans-serif'],
             },
         }
     }
