@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const defaultLocale = 'ru';
 const supportedLocales = ['ru', 'en'];
 
@@ -8,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setLocale(defaultLocale);
     bindLocaleSwitcher();
     initModal();
+    initHeroGallery();
     initSlides();
 });
 
@@ -19,8 +22,11 @@ async function setLocale(newLocale) {
     translations = newTranslations;
 
     translatePage();
-    renderProjects();
+    renderSkills();
+    renderServices();
+    renderPackages();
     updateLangButton();
+    resetModal();
 
     document.documentElement.setAttribute('lang', newLocale);
 }
@@ -31,88 +37,154 @@ async function fetchTranslationsFor(newLocale) {
 }
 
 function translatePage() {
-    document.querySelectorAll('[data-i18n-key]').forEach(translateElement);
-}
-
-function translateElement(element) {
-    const key = element.getAttribute('data-i18n-key');
-    const translation = translations[key];
-    if (translation) {
-        element.textContent = translation;
-    }
-}
-
-const PROJECT_ICONS = {
-    visit: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>',
-    code: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>',
-};
-
-function renderProjects() {
-    const container = document.getElementById('projectsList');
-    if (!container || !Array.isArray(translations.projects)) return;
-
-    container.innerHTML = '';
-
-    translations.projects.forEach((project) => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-
-        const title = document.createElement('h3');
-        title.textContent = project.name;
-        card.appendChild(title);
-
-        const description = document.createElement('p');
-        description.textContent = project.description;
-        card.appendChild(description);
-
-        const links = document.createElement('div');
-        links.className = 'project-links';
-
-        if (project.url) {
-            links.appendChild(createProjectLink(project.url, translations.project_visit || 'Visit', 'visit'));
-        }
-        if (project.repo) {
-            links.appendChild(createProjectLink(project.repo, translations.project_code || 'Code', 'code'));
-        }
-
-        card.appendChild(links);
-        container.appendChild(card);
+    document.querySelectorAll('[data-i18n-key]').forEach((element) => {
+        const translation = translations[element.getAttribute('data-i18n-key')];
+        if (typeof translation === 'string') element.textContent = translation;
+    });
+    document.querySelectorAll('[data-i18n-label]').forEach((element) => {
+        const translation = translations[element.getAttribute('data-i18n-label')];
+        if (translation) element.setAttribute('aria-label', translation);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
+        const translation = translations[element.getAttribute('data-i18n-alt')];
+        if (translation) element.setAttribute('alt', translation);
     });
 }
 
-function createProjectLink(href, label, icon) {
-    const link = document.createElement('a');
+// ── Rendering helpers ─────────────────────
+
+function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+}
+
+function icon(name) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('aria-hidden', 'true');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', `#i-${name}`);
+    svg.appendChild(use);
+    return svg;
+}
+
+function externalLink(href, className) {
+    const link = el('a', className);
     link.href = href;
     link.target = '_blank';
     link.rel = 'noopener';
-    link.className = 'project-link';
-    link.innerHTML = PROJECT_ICONS[icon] || '';
-
-    const span = document.createElement('span');
-    span.textContent = label;
-    link.appendChild(span);
-
     return link;
+}
+
+function renderList(containerId, items, renderItem) {
+    const container = document.getElementById(containerId);
+    if (!container || !Array.isArray(items)) return;
+    container.replaceChildren(...items.map(renderItem));
+}
+
+function renderSkills() {
+    renderList('skillsList', translations.skills, (skill) => {
+        const card = el('article', 'skill-card');
+
+        if (skill.icons?.length) {
+            const icons = el('div', 'skill-icons');
+            skill.icons.forEach((name) => {
+                const wrap = el('span', 'skill-icon');
+                const img = el('img');
+                img.src = `/assets/icons/${name}.svg`;
+                img.alt = name;
+                img.title = name;
+                img.width = 22;
+                img.height = 22;
+                wrap.appendChild(img);
+                icons.appendChild(wrap);
+            });
+            card.appendChild(icons);
+        }
+
+        if (skill.chips?.length) {
+            const chips = el('div', 'skill-chips');
+            skill.chips.forEach((chip) => chips.appendChild(el('span', 'chip', chip)));
+            card.appendChild(chips);
+        }
+
+        card.appendChild(el('h3', 'skill-title', skill.title));
+        card.appendChild(el('p', 'skill-text', skill.text));
+        return card;
+    });
+}
+
+function renderServices() {
+    renderList('servicesList', translations.services, (service) => {
+        const card = externalLink(service.url, 'service-card');
+
+        const media = el('div', 'service-media');
+        const img = el('img');
+        img.src = service.image;
+        img.alt = service.name;
+        img.loading = 'lazy';
+        media.appendChild(img);
+        media.appendChild(el('span', 'service-badge', service.badge));
+        card.appendChild(media);
+
+        const title = el('h3', 'service-title');
+        const arrow = el('span', 'circle-icon');
+        arrow.appendChild(icon('arrow-right'));
+        title.append(arrow, el('span', '', service.name));
+        card.appendChild(title);
+
+        card.appendChild(el('p', 'service-text', service.description));
+
+        const tags = el('div', 'service-tags');
+        (service.tags || []).forEach((tag) => tags.appendChild(el('span', 'chip', tag)));
+        card.appendChild(tags);
+
+        return card;
+    });
+}
+
+function renderPackages() {
+    renderList('packagesList', translations.packages, (pkg) => {
+        const card = externalLink(pkg.url, 'package-card');
+
+        const top = el('div', 'package-top');
+        top.appendChild(el('code', 'package-slug', pkg.slug));
+        const arrow = el('span', 'circle-icon');
+        arrow.appendChild(icon('arrow-up-right'));
+        top.appendChild(arrow);
+        card.appendChild(top);
+
+        card.appendChild(el('h3', 'package-title', pkg.name));
+        card.appendChild(el('p', 'package-text', pkg.description));
+        card.appendChild(el('p', 'package-stack', translations.packages_stack || ''));
+        return card;
+    });
+}
+
+// ── Locale switcher ─────────────────────
+
+function nextLocale() {
+    const currentIndex = supportedLocales.indexOf(locale);
+    return supportedLocales[(currentIndex + 1) % supportedLocales.length];
 }
 
 function updateLangButton() {
     const btn = document.querySelector('[data-i18n-switcher]');
-    if (!btn) return;
-    
-    const currentIndex = supportedLocales.indexOf(locale);
-    const nextLocale = supportedLocales[(currentIndex + 1) % supportedLocales.length];
-    btn.textContent = nextLocale.toUpperCase();
+    if (btn) btn.textContent = nextLocale().toUpperCase();
 }
 
 function bindLocaleSwitcher() {
     const switcher = document.querySelector('[data-i18n-switcher]');
-    if (!switcher) return;
+    if (switcher) switcher.addEventListener('click', () => setLocale(nextLocale()));
+}
 
-    switcher.addEventListener('click', () => {
-        const currentIndex = supportedLocales.indexOf(locale);
-        const nextLocale = supportedLocales[(currentIndex + 1) % supportedLocales.length];
-        setLocale(nextLocale);
-    });
+// ── About modal (content is stored locally in /content) ─────────────────────
+
+let modalLoadedFor = null;
+
+function resetModal() {
+    modalLoadedFor = null;
 }
 
 function initModal() {
@@ -120,32 +192,35 @@ function initModal() {
     const aboutLink = document.getElementById('aboutLink');
     const closeModalBtn = document.getElementById('closeModal');
     const modalContent = document.getElementById('modalContent');
-    let loaded = false;
 
-    aboutLink.addEventListener('click', async (e) => {
-        e.preventDefault();
+    aboutLink.addEventListener('click', async () => {
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        closeModalBtn.focus();
 
-        if (loaded) return;
+        if (modalLoadedFor === locale) return;
+
+        const requestedLocale = locale;
+        modalContent.innerHTML = '<div class="spinner"></div>';
 
         try {
-            const response = await fetch('https://raw.githubusercontent.com/ega22a/ega22a/refs/heads/main/README.md');
+            const response = await fetch(`/content/about.${requestedLocale}.md`);
             if (!response.ok) throw new Error('Network response was not ok');
             const markdown = await response.text();
+            if (requestedLocale !== locale) return;
             modalContent.innerHTML = marked.parse(markdown);
-            loaded = true;
+            modalContent.querySelectorAll('a[href^="http"]').forEach((link) => {
+                link.target = '_blank';
+                link.rel = 'noopener';
+            });
+            modalLoadedFor = requestedLocale;
         } catch (error) {
-            modalContent.innerHTML = `
-                <p style="color:var(--text-muted);text-align:center;padding:2rem 0;">
-                    Не удалось загрузить данные. Попробуйте позже.
-                </p>`;
+            modalContent.replaceChildren(el('p', 'modal-error', translations.modal_error));
         }
     });
 
     function closeModal() {
         modal.classList.remove('active');
-        document.body.style.overflow = '';
+        aboutLink.focus();
     }
 
     closeModalBtn.addEventListener('click', closeModal);
@@ -161,46 +236,83 @@ function initModal() {
     });
 }
 
+// ── Hero photo gallery ─────────────────────
+
+// The progress bar animation is the clock: when it ends the next photo is shown,
+// so pausing the animation (hero off-screen, tab hidden) pauses the gallery too.
+function initHeroGallery() {
+    const images = Array.from(document.querySelectorAll('.hero-gallery-img'));
+    const progress = document.querySelector('.hero-progress');
+    const hero = document.getElementById('hero');
+    if (images.length < 2 || !progress) return;
+
+    let current = 0;
+    const bars = images.map((_, i) => {
+        const bar = el('button');
+        bar.type = 'button';
+        bar.tabIndex = -1;
+        bar.addEventListener('click', () => show(i));
+        progress.appendChild(bar);
+        return bar;
+    });
+
+    function show(index) {
+        current = (index + images.length) % images.length;
+        images.forEach((img, i) => img.classList.toggle('is-current', i === current));
+        bars.forEach((bar, i) => {
+            bar.classList.remove('is-current');
+            bar.classList.toggle('is-done', i < current);
+        });
+        void progress.offsetWidth; // restart the progress animation
+        bars[current].classList.add('is-current');
+    }
+
+    const updatePaused = () => {
+        progress.classList.toggle('is-paused', document.hidden || !hero.classList.contains('is-active'));
+    };
+
+    progress.addEventListener('animationend', (e) => {
+        if (e.target === bars[current]) show(current + 1);
+    });
+    document.addEventListener('slidechange', updatePaused);
+    document.addEventListener('visibilitychange', updatePaused);
+
+    show(0);
+}
+
+// ── Slides ─────────────────────
+
 function initSlides() {
     const slidesEl = document.querySelector('.slides');
     const slides = Array.from(document.querySelectorAll('.slide'));
-    const navLinks = document.querySelectorAll('.nav-link');
-    const dots = document.querySelectorAll('.slide-dot');
-    const prevBtn = document.querySelector('.slide-arrow-prev');
-    const nextBtn = document.querySelector('.slide-arrow-next');
+    const dockItems = document.querySelectorAll('.dock-item[href]');
+    const header = document.querySelector('.site-header');
     if (!slidesEl || !slides.length) return;
 
-    let activeIndex = 0;
+    let activeIndex = -1;
 
-    const setActive = (id) => {
-        const index = slides.findIndex((slide) => slide.id === id);
+    const setActive = (index) => {
         if (index === -1 || index === activeIndex) return;
         activeIndex = index;
+        const id = slides[index].id;
 
-        navLinks.forEach((link) => {
-            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+        dockItems.forEach((item) => {
+            item.classList.toggle('is-active', item.getAttribute('href') === `#${id}`);
         });
-        dots.forEach((dot) => {
-            dot.classList.toggle('is-active', dot.getAttribute('href') === `#${id}`);
-        });
-        if (prevBtn) prevBtn.disabled = activeIndex === 0;
-        if (nextBtn) nextBtn.disabled = activeIndex === slides.length - 1;
+        if (header) header.dataset.theme = ['light', 'grey'].find((t) => slides[index].classList.contains(`theme-${t}`)) || 'dark';
 
-        const inner = slides[activeIndex].querySelector('.slide-inner');
-        if (inner) {
-            inner.classList.remove('is-entering');
-            // eslint-disable-next-line no-void
-            void inner.offsetWidth; // restart animation
-            inner.classList.add('is-entering');
-        }
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+        document.dispatchEvent(new CustomEvent('slidechange', { detail: { id } }));
     };
+
+    setActive(0);
 
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             const visible = entries
                 .filter((entry) => entry.isIntersecting)
                 .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-            if (visible) setActive(visible.target.id);
+            if (visible) setActive(slides.indexOf(visible.target));
         }, { root: slidesEl, threshold: 0.6 });
 
         slides.forEach((slide) => observer.observe(slide));
@@ -211,24 +323,48 @@ function initSlides() {
         slides[clamped].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
     };
 
-    if (prevBtn) prevBtn.addEventListener('click', () => goToIndex(activeIndex - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goToIndex(activeIndex + 1));
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            const index = slides.findIndex((slide) => `#${slide.id}` === link.getAttribute('href'));
+            if (index === -1) return;
+            e.preventDefault();
+            goToIndex(index);
+        });
+    });
 
-    // Let a normal vertical wheel/trackpad gesture drive the horizontal slider.
+    // A vertical wheel / trackpad gesture flips one slide at a time,
+    // unless the current slide itself has content left to scroll.
+    // The lock is held until the gesture (including trackpad inertia) goes quiet.
+    let wheelLocked = false;
+    let wheelUnlockTimer;
     slidesEl.addEventListener('wheel', (e) => {
         if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+
+        const slide = slides[activeIndex];
+        const canScrollDown = slide.scrollTop + slide.clientHeight < slide.scrollHeight - 1;
+        const canScrollUp = slide.scrollTop > 0;
+        if ((e.deltaY > 0 && canScrollDown) || (e.deltaY < 0 && canScrollUp)) return;
+
         e.preventDefault();
-        slidesEl.scrollLeft += e.deltaY;
+        clearTimeout(wheelUnlockTimer);
+        wheelUnlockTimer = setTimeout(() => { wheelLocked = false; }, 250);
+        if (wheelLocked || Math.abs(e.deltaY) < 4) return;
+        wheelLocked = true;
+        goToIndex(activeIndex + Math.sign(e.deltaY));
     }, { passive: false });
 
     document.addEventListener('keydown', (e) => {
         if (document.getElementById('aboutModal').classList.contains('active')) return;
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown') {
             e.preventDefault();
             goToIndex(activeIndex + 1);
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
             e.preventDefault();
             goToIndex(activeIndex - 1);
+        } else if (e.key === 'Home') {
+            goToIndex(0);
+        } else if (e.key === 'End') {
+            goToIndex(slides.length - 1);
         }
     });
 }

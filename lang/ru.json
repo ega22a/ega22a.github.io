@@ -1,33 +1,153 @@
 {
     "fullname": "Репьев Егор Денисович",
+    "signature": "© Код — Егор Репьев",
+    "tagline": "Full-stack разработчик, DevOps-инженер и преподаватель. Строю цифровую инфраструктуру колледжа и делаю веб-сервисы, которыми удобно пользоваться",
     "role": "Full-stack · DevOps · Преподаватель",
-    "position": "Заведующий Отделением информационной устойчивости и цифровых инноваций и преподаватель в ГАПОУ СО «Нижнетагильский торгово-экономический колледж»",
-    "bio": "Разрабатываю и внедряю цифровые решения в образовательной среде. Специализируюсь на веб-приложениях, DevOps-практиках и управлении ИТ-инфраструктурой.",
-    "stack_label": "Стек технологий",
+    "hero_marquee": "Full-stack разработчик & преподаватель —",
     "location": "Нижний Тагил, Россия",
-    "about": "Обо мне",
-    "hero_greeting": "Рад знакомству",
-    "hero_cta": "Узнать больше",
-    "about_heading": "Обо мне",
-    "read_more": "Читать полностью",
-    "contact_heading": "Давайте на связь",
-    "contact_sub": "Открыт к сотрудничеству и новым проектам",
+
     "nav_profile": "Профиль",
     "nav_about": "Обо мне",
-    "nav_stack": "Стек",
-    "nav_projects": "Проекты",
+    "nav_skills": "Навыки",
+    "nav_work": "Проекты",
+    "nav_packages": "Пакеты",
     "nav_contact": "Контакты",
-    "back_to_top": "Наверх",
-    "projects_heading": "Пет-проекты",
-    "projects_sub": "Что делаю в свободное время",
-    "project_visit": "Открыть",
-    "project_code": "Код",
-    "projects": [
+
+    "about_statement": "Разрабатываю и внедряю цифровые решения в образовании: от сайта колледжа и сервиса электронной подписи до единой инфраструктуры доступа на FreeIPA и Keycloak. Люблю, когда сложное устроено просто.",
+    "position": "Заведующий Отделением информационной устойчивости и цифровых инноваций и преподаватель в ГАПОУ СО «Нижнетагильский торгово-экономический колледж»",
+    "about_more": "Подробнее обо мне",
+
+    "skills_heading": "Навыки, на которых всё держится",
+    "skills": [
+        {
+            "title": "Backend",
+            "text": "Веб-приложения и API на Laravel: от доменной логики до WebSocket в реальном времени.",
+            "icons": ["php", "laravel"],
+            "chips": ["REST", "Eloquent", "Reverb", "Laravel Data"]
+        },
+        {
+            "title": "Frontend",
+            "text": "Лёгкие и отзывчивые интерфейсы без лишнего JavaScript.",
+            "icons": ["svelte", "alpine", "tailwind", "javascript", "html", "css"]
+        },
+        {
+            "title": "Базы данных",
+            "text": "Проектирование схем, индексы, миграции и оптимизация запросов.",
+            "icons": ["postgresql", "mysql", "sqlite"]
+        },
+        {
+            "title": "DevOps",
+            "text": "Контейнеры, CI/CD, автоматический деплой и мониторинг серверов.",
+            "icons": ["docker", "linux", "bash", "nginx", "git", "githubactions"]
+        },
+        {
+            "title": "Identity & Access",
+            "text": "Единая инфраструктура учётных записей колледжа и SSO для всех сервисов.",
+            "icons": ["keycloak"],
+            "chips": ["FreeIPA", "LDAP", "SSSD", "OIDC"]
+        },
+        {
+            "title": "Образование",
+            "text": "Moodle-плагины, интерактивные курсы и подготовка студентов к чемпионатам.",
+            "icons": ["moodle"],
+            "chips": ["Абилимпикс", "Профессионалитет"]
+        },
+        {
+            "title": "Интеграции",
+            "text": "Боты и связки между сервисами, которые избавляют от ручной работы.",
+            "icons": ["telegram"],
+            "chips": ["YouGile", "Max", "Moodle API"]
+        },
+        {
+            "title": "Управление",
+            "text": "Руковожу отделением и планирую ИТ-архитектуру колледжа.",
+            "chips": ["Цифровая трансформация", "ИТ-архитектура", "Менторство"]
+        }
+    ],
+
+    "work_heading": "Сервисы, которые уже работают",
+    "work_caption": "Веб-приложения, которые я спроектировал и запустил в продакшн",
+    "packages_heading": "Единая цифровая инфраструктура НТТЭК",
+    "packages_caption": "Open-source пакеты для внутренних Laravel-сервисов колледжа: SSO, каталог пользователей, защита персональных данных",
+    "project_open": "Открыть",
+    "services": [
         {
             "name": "Эмодром",
-            "description": "Веб-сервис для психологической party-игры про эмоции: пульт ведущего, витрина для проектора и экран каждого игрока обновляются в реальном времени через WebSocket.",
-            "url": "https://emodrom.repiev.space",
-            "repo": "https://github.com/ega22a/emodrom"
+            "badge": "Пет-проект",
+            "description": "Веб-сервис для психологической party-игры про эмоции: пульт ведущего, витрина для проектора и экраны игроков обновляются в реальном времени.",
+            "image": "/assets/projects/emodrom.jpg",
+            "url": "https://emodrom.repiev.space/",
+            "tags": ["Laravel 13", "Reverb", "Alpine.js", "Tailwind 4"]
+        },
+        {
+            "name": "Сайт НТТЭК",
+            "badge": "nttek.ru",
+            "description": "Официальный сайт колледжа: новости, документы, разделы для абитуриентов, студентов и родителей, версия для слабовидящих и тёмная тема.",
+            "image": "/assets/projects/nttek.jpg",
+            "url": "https://nttek.ru/",
+            "tags": ["Laravel", "Alpine.js", "Tailwind CSS"]
+        },
+        {
+            "name": "Сигнатус",
+            "badge": "sig.nttek.ru",
+            "description": "Сервис электронной подписи НТТЭК: подписание, просмотр и архив документов внутри колледжа по корпоративным учётным записям.",
+            "image": "/assets/projects/signatus.jpg",
+            "url": "https://sig.nttek.ru/",
+            "tags": ["Laravel", "PKI", "Alpine.js"]
         }
-    ]
+    ],
+    "packages": [
+        {
+            "name": "Транслитерация",
+            "slug": "ntcte/transliteration",
+            "description": "Транслитерация кириллицы по ICAO Doc 9303 и построение логинов сотрудников и студентов с подбором свободного варианта.",
+            "url": "https://gitverse.ru/ntcte/transliteration"
+        },
+        {
+            "name": "Классификация ПДн",
+            "slug": "ntcte/pdn-classification",
+            "description": "Разметка полей персональных данных PHP-атрибутами в моделях и DTO и artisan-отчёт для Реестра информационных систем.",
+            "url": "https://gitverse.ru/ntcte/pdn-classification"
+        },
+        {
+            "name": "Keycloak JWT",
+            "slug": "ntcte/jwt-keycloak",
+            "description": "Stateless-guard для API: проверка токенов Keycloak по JWKS, RBAC по ролям и группам FreeIPA, Back-Channel Logout.",
+            "url": "https://gitverse.ru/ntcte/jwt-keycloak"
+        },
+        {
+            "name": "Каталог FreeIPA",
+            "slug": "ntcte/freeipa-directory",
+            "description": "Полная цепочка групп пользователя FreeIPA через рекурсивный обход членства, с кэшем и fail-closed поведением.",
+            "url": "https://gitverse.ru/ntcte/freeipa-directory"
+        },
+        {
+            "name": "Аудит доступа к ПДн",
+            "slug": "ntcte/audit-log",
+            "description": "Структурированный лог чтения и изменения персональных данных одним трейтом на модели — основа мер защиты по 152-ФЗ.",
+            "url": "https://gitverse.ru/ntcte/audit-log"
+        },
+        {
+            "name": "Единый API-ответ",
+            "slug": "ntcte/api-response",
+            "description": "JSON-конверт data / meta / errors, сквозной request_id, определение локали и единый рендеринг исключений.",
+            "url": "https://gitverse.ru/ntcte/api-response"
+        }
+    ],
+    "packages_stack": "PHP 8.4 · Laravel 12 / 13",
+
+    "contact_kicker": "Пока на этом всё.",
+    "contact_heading": "Есть идея или проект?\nДавайте обсудим",
+    "contact_cta": "Написать",
+    "label_email": "Почта",
+    "label_links": "Ссылки",
+    "nttek": "НТТЭК",
+    "label_telegram": "Telegram",
+    "footer_tagline": "ваш дружелюбный инженер порядка",
+    "footer_name": "Егоооооор",
+    "to_start": "В начало",
+
+    "modal_title": "Обо мне",
+    "modal_error": "Не удалось загрузить текст. Попробуйте позже.",
+    "close": "Закрыть"
 }

@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Репьев Егор Денисович</title>
 
     <meta name="description" content="Заведующий отделением ИБиЦИ и преподаватель в НТТЭК. Full-stack веб-разработчик, DevOps-инженер, ментор.">
-    <meta name="theme-color" content="#a15a2e">
+    <meta name="theme-color" content="#0a0a0a">
 
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Репьев Егор Денисович — Full-stack Developer & Lecturer">
@@ -27,179 +27,179 @@
 
     <link rel="canonical" href="https://repiev.space">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/styles.css?ver=6">
+    <link rel="preload" href="/assets/fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css?ver=9">
 </head>
 <body>
-    <div class="bg-aurora" aria-hidden="true"></div>
+    <!-- Lucide icons (ISC), used via <use href="#i-…"> -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+            <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></symbol>
+            <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+            <symbol id="i-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+            <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+            <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+            <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+            <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+        </defs>
+    </svg>
 
-    <header class="site-nav">
-        <a href="#hero" class="nav-logo">EG</a>
-        <nav class="nav-links">
-            <a href="#hero" class="nav-link is-active" data-i18n-key="nav_profile">Профиль</a>
-            <a href="#about" class="nav-link" data-i18n-key="nav_about">Обо мне</a>
-            <a href="#stack" class="nav-link" data-i18n-key="nav_stack">Стек</a>
-            <a href="#projects" class="nav-link" data-i18n-key="nav_projects">Проекты</a>
-            <a href="#contact" class="nav-link" data-i18n-key="nav_contact">Контакты</a>
-        </nav>
-        <button data-i18n-switcher class="lang-btn">EN</button>
+    <header class="site-header">
+        <a href="#hero" class="site-signature" data-i18n-key="signature">© Код — Егор Репьев</a>
+        <p class="site-tagline" data-i18n-key="tagline">Full-stack разработчик, DevOps-инженер и преподаватель. Строю цифровую инфраструктуру колледжа и делаю веб-сервисы, которыми удобно пользоваться</p>
     </header>
 
-    <button class="slide-arrow slide-arrow-prev" aria-label="Назад" disabled>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-    </button>
-    <button class="slide-arrow slide-arrow-next" aria-label="Вперёд">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-    </button>
-
     <main class="slides">
-        <section id="hero" class="slide hero-slide">
-            <div class="slide-inner">
-                <div class="hero-identity">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-ring"></div>
-                        <img src="/assets/avatar.jpg" alt="Репьев Егор Денисович" class="avatar-img">
-                    </div>
-                    <div>
-                        <span class="role-badge" data-i18n-key="role">Full-stack · DevOps · Преподаватель</span>
-                        <h1 data-i18n-key="fullname">Репьев Егор Денисович</h1>
-                    </div>
+        <!-- 00 Hero -->
+        <section id="hero" class="slide slide-hero theme-grey">
+            <!-- --focus keeps the speaker in frame when the photo is cropped -->
+            <div class="hero-gallery">
+                <img src="/assets/hero/hero-1.webp" alt="" class="hero-gallery-img is-current" style="--focus: 31% 30%" fetchpriority="high">
+                <img src="/assets/hero/hero-2.webp" alt="" class="hero-gallery-img" style="--focus: 30% 30%">
+                <img src="/assets/hero/hero-3.webp" alt="" class="hero-gallery-img" style="--focus: 27% 40%">
+                <img src="/assets/hero/hero-4.webp" alt="" class="hero-gallery-img" style="--focus: 13% 30%">
+            </div>
+
+            <div class="hero-marquee" aria-hidden="true">
+                <div class="hero-marquee-track">
+                    <span data-i18n-key="hero_marquee">Full-stack разработчик &amp; преподаватель —</span>
+                    <span data-i18n-key="hero_marquee">Full-stack разработчик &amp; преподаватель —</span>
                 </div>
+            </div>
 
-                <h2 class="giant-text" data-i18n-key="hero_greeting">Рад знакомству</h2>
+            <a href="#about" class="hero-cta" aria-label="Обо мне" data-i18n-label="nav_about">
+                <svg><use href="#i-arrow-up-right"/></svg>
+            </a>
 
-                <a href="#about" class="hero-cta" aria-label="Узнать больше">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"/>
-                        <path d="m12 5 7 7-7 7"/>
-                    </svg>
-                </a>
+            <div class="hero-progress" aria-hidden="true"></div>
+
+            <div class="hero-caption">
+                <h1 data-i18n-key="fullname">Репьев Егор Денисович</h1>
+                <p data-i18n-key="role">Full-stack · DevOps · Преподаватель</p>
             </div>
         </section>
 
-        <section id="about" class="slide about-slide">
-            <div class="slide-inner">
-                <p class="slide-kicker">01 &mdash; <span data-i18n-key="about_heading">Обо мне</span></p>
-
-                <p class="giant-text giant-text-tight" data-i18n-key="bio">
-                    Разрабатываю и внедряю цифровые решения в образовательной среде. Специализируюсь на веб-приложениях, DevOps-практиках и управлении ИТ-инфраструктурой.
-                </p>
-
-                <div class="about-meta">
-                    <p class="position-text" data-i18n-key="position">Заведующий отделением ИБиЦИ и преподаватель в ГАПОУ СО «НТТЭК»</p>
-                    <p class="location-text">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
+        <!-- 01 About -->
+        <section id="about" class="slide slide-about theme-light">
+            <div class="slide-inner about-grid">
+                <p class="about-statement" data-i18n-key="about_statement">Разрабатываю и внедряю цифровые решения в образовании.</p>
+                <div class="about-side">
+                    <p data-i18n-key="position">Заведующий Отделением информационной устойчивости и цифровых инноваций и преподаватель в ГАПОУ СО «Нижнетагильский торгово-экономический колледж»</p>
+                    <p class="about-location">
+                        <svg><use href="#i-pin"/></svg>
                         <span data-i18n-key="location">Нижний Тагил, Россия</span>
                     </p>
-                    <a id="aboutLink" href="#" class="text-link" data-i18n-key="read_more">Читать полностью</a>
+                    <button type="button" id="aboutLink" class="circle-link">
+                        <span data-i18n-key="about_more">Подробнее обо мне</span>
+                        <span class="circle-icon"><svg><use href="#i-arrow-up-right"/></svg></span>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <section id="stack" class="slide stack-slide">
+        <!-- 02 Skills -->
+        <section id="skills" class="slide slide-skills theme-dark">
             <div class="slide-inner">
-                <p class="slide-kicker">02 &mdash; <span data-i18n-key="stack_label">Стек технологий</span></p>
-                <div class="stack-icons">
-                    <img src="https://skillicons.dev/icons?i=php,laravel,js,svelte,html,css,postgres,mysql,docker,bash,linux,git&theme=dark&perline=6" alt="Tech Stack" loading="lazy">
-                </div>
+                <h2 class="slide-heading slide-heading-center" data-i18n-key="skills_heading">Навыки, на которых всё держится</h2>
+                <div id="skillsList" class="skills-grid"></div>
             </div>
         </section>
 
-        <section id="projects" class="slide projects-slide">
+        <!-- 03 Services -->
+        <section id="work" class="slide slide-work theme-light">
             <div class="slide-inner">
-                <p class="slide-kicker">03 &mdash; <span data-i18n-key="nav_projects">Проекты</span></p>
-                <h2 class="giant-text giant-text-tight" data-i18n-key="projects_heading">Пет-проекты</h2>
-                <p class="contact-sub" data-i18n-key="projects_sub">Что делаю в свободное время</p>
-
-                <div id="projectsList" class="projects-list"></div>
+                <div class="slide-head">
+                    <h2 class="slide-heading" data-i18n-key="work_heading">Сервисы, которые уже работают</h2>
+                    <p class="slide-caption" data-i18n-key="work_caption">Веб-приложения, которые я спроектировал и запустил в продакшн</p>
+                </div>
+                <div id="servicesList" class="services-grid"></div>
             </div>
         </section>
 
-        <section id="contact" class="slide contact-slide">
+        <!-- 04 Packages -->
+        <section id="packages" class="slide slide-packages theme-dark">
             <div class="slide-inner">
-                <p class="slide-kicker">04 &mdash; <span data-i18n-key="nav_contact">Контакты</span></p>
-                <h2 class="giant-text" data-i18n-key="contact_heading">Давайте на связь</h2>
-                <p class="contact-sub" data-i18n-key="contact_sub">Открыт к сотрудничеству и новым проектам</p>
+                <div class="slide-head">
+                    <h2 class="slide-heading" data-i18n-key="packages_heading">Единая цифровая инфраструктура НТТЭК</h2>
+                    <p class="slide-caption" data-i18n-key="packages_caption">Open-source пакеты для внутренних Laravel-сервисов колледжа</p>
+                </div>
+                <div id="packagesList" class="packages-grid"></div>
+            </div>
+        </section>
 
-                <div class="contact-grid">
-                    <a href="mailto:repev.egor@nttek.ru" class="contact-link" title="Email">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
-                            <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        </svg>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://ega22a.t.me" class="contact-link" target="_blank" rel="noopener">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
-                        </svg>
-                        <span>Telegram</span>
-                    </a>
-                    <a href="https://github.com/ega22a" class="contact-link" target="_blank" rel="noopener">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://nttek.ru/page/repev-egor-denisovic-143" class="contact-link" target="_blank" rel="noopener">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
-                            <path d="M22 10v6"/>
-                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
-                        </svg>
-                        <span>НТТЭК</span>
-                    </a>
-                    <a href="https://www.instagram.com/ega22a/" class="contact-link" target="_blank" rel="noopener">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://www.x.com/ega22a" class="contact-link" target="_blank" rel="noopener">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                        <span>X</span>
-                    </a>
+        <!-- 05 Contact -->
+        <section id="contact" class="slide slide-contact theme-light">
+            <div class="slide-inner contact-main">
+                <p class="mono-kicker" data-i18n-key="contact_kicker">Пока на этом всё.</p>
+                <h2 class="contact-heading" data-i18n-key="contact_heading">Есть идея или проект?
+Давайте обсудим</h2>
+
+                <div class="contact-line">
+                    <a href="https://ega22a.t.me" class="contact-cta" target="_blank" rel="noopener" data-i18n-key="contact_cta">Написать</a>
                 </div>
 
-                <p class="footer-domain">repiev.space</p>
+                <dl class="contact-details">
+                    <div>
+                        <dt data-i18n-key="label_email">Почта</dt>
+                        <dd><a href="mailto:repev.egor@nttek.ru">repev.egor@nttek.ru</a></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n-key="label_telegram">Telegram</dt>
+                        <dd><a href="https://ega22a.t.me" target="_blank" rel="noopener">@ega22a</a></dd>
+                    </div>
+                    <div>
+                        <dt data-i18n-key="label_links">Ссылки</dt>
+                        <dd class="contact-socials">
+                            <a href="https://github.com/ega22a" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://gitverse.ru/ntcte" target="_blank" rel="noopener">GitVerse</a>
+                            <a href="https://nttek.ru/page/repev-egor-denisovic-143" target="_blank" rel="noopener" data-i18n-key="nttek">НТТЭК</a>
+                            <a href="https://www.x.com/ega22a" target="_blank" rel="noopener">X</a>
+                        </dd>
+                    </div>
+                </dl>
             </div>
+
+            <footer class="contact-footer">
+                <div class="footer-top">
+                    <p class="footer-tagline" data-i18n-key="footer_tagline">ваш дружелюбный инженер порядка</p>
+                    <a href="#hero" class="footer-back" aria-label="В начало" data-i18n-label="to_start">
+                        <svg><use href="#i-undo"/></svg>
+                    </a>
+                </div>
+                <p class="footer-name" data-i18n-key="footer_name">Егоооооор</p>
+            </footer>
         </section>
     </main>
 
-    <div class="slide-dots">
-        <a href="#hero" class="slide-dot is-active" aria-label="Профиль"></a>
-        <a href="#about" class="slide-dot" aria-label="Обо мне"></a>
-        <a href="#stack" class="slide-dot" aria-label="Стек"></a>
-        <a href="#projects" class="slide-dot" aria-label="Проекты"></a>
-        <a href="#contact" class="slide-dot" aria-label="Контакты"></a>
-    </div>
+    <nav class="dock" aria-label="Slides">
+        <a href="#hero" class="dock-item is-active" aria-label="Профиль" data-i18n-label="nav_profile"><svg><use href="#i-house"/></svg></a>
+        <a href="#about" class="dock-item" aria-label="Обо мне" data-i18n-label="nav_about"><svg><use href="#i-user"/></svg></a>
+        <a href="#skills" class="dock-item" aria-label="Навыки" data-i18n-label="nav_skills"><svg><use href="#i-sparkles"/></svg></a>
+        <a href="#work" class="dock-item" aria-label="Проекты" data-i18n-label="nav_work"><svg><use href="#i-grid"/></svg></a>
+        <a href="#packages" class="dock-item" aria-label="Пакеты" data-i18n-label="nav_packages"><svg><use href="#i-package"/></svg></a>
+        <a href="#contact" class="dock-item" aria-label="Контакты" data-i18n-label="nav_contact"><svg><use href="#i-mail"/></svg></a>
+        <span class="dock-divider" aria-hidden="true"></span>
+        <button type="button" data-i18n-switcher class="dock-item dock-lang">EN</button>
+    </nav>
 
-    <div id="aboutModal" class="modal-overlay">
+    <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-box">
             <div class="modal-header">
-                <h2 class="modal-title" data-i18n-key="about">Обо мне</h2>
-                <button id="closeModal" class="modal-close" aria-label="Закрыть">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18"/>
-                        <path d="m6 6 12 12"/>
-                    </svg>
+                <h2 id="modalTitle" class="modal-title" data-i18n-key="modal_title">Обо мне</h2>
+                <button type="button" id="closeModal" class="modal-close" aria-label="Закрыть" data-i18n-label="close">
+                    <svg><use href="#i-x"/></svg>
                 </button>
             </div>
-            <div id="modalContent" class="modal-body markdown-content">
-                <div class="spinner"></div>
-            </div>
+            <div id="modalContent" class="modal-body markdown-content"></div>
         </div>
     </div>
 
     <script src="/js/marked.min.js?ver=1"></script>
-    <script src="/js/script.js?ver=4"></script>
+    <script src="/js/script.js?ver=6"></script>
 </body>
 </html>

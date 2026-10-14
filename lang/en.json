@@ -1,33 +1,153 @@
 {
     "fullname": "Repiev George Denisovich",
+    "signature": "© Code by George Repiev",
+    "tagline": "Full-stack developer, DevOps engineer and lecturer. I build my college's digital infrastructure and web services that are a pleasure to use",
     "role": "Full-stack · DevOps · Lecturer",
-    "position": "Head of Department of Information Resilience & Digital Innovation at Nizhny Tagil College of Trade and Economics",
-    "bio": "Building and deploying digital solutions for educational environments. Focused on web application architecture, DevOps practices, and IT infrastructure management.",
-    "stack_label": "Tech Stack",
+    "hero_marquee": "Full-stack Developer & Lecturer —",
     "location": "Nizhny Tagil, Russia",
-    "about": "About me",
-    "hero_greeting": "Nice to meet you",
-    "hero_cta": "Learn more",
-    "about_heading": "About me",
-    "read_more": "Read full bio",
-    "contact_heading": "Let's get in touch",
-    "contact_sub": "Open to collaboration and new projects",
+
     "nav_profile": "Profile",
     "nav_about": "About",
-    "nav_stack": "Stack",
-    "nav_projects": "Projects",
+    "nav_skills": "Skills",
+    "nav_work": "Projects",
+    "nav_packages": "Packages",
     "nav_contact": "Contact",
-    "back_to_top": "Back to top",
-    "projects_heading": "Pet projects",
-    "projects_sub": "What I build in my spare time",
-    "project_visit": "Visit",
-    "project_code": "Code",
-    "projects": [
+
+    "about_statement": "I build and deploy digital solutions for education: from the college website and an e-signature service to a unified access infrastructure on FreeIPA and Keycloak. I like complex things built simply.",
+    "position": "Head of the Department of Information Resilience and Digital Innovation and lecturer at Nizhny Tagil College of Trade and Economics",
+    "about_more": "More about me",
+
+    "skills_heading": "Skills that hold it all together",
+    "skills": [
+        {
+            "title": "Backend",
+            "text": "Web apps and APIs on Laravel, from domain logic to real-time WebSockets.",
+            "icons": ["php", "laravel"],
+            "chips": ["REST", "Eloquent", "Reverb", "Laravel Data"]
+        },
+        {
+            "title": "Frontend",
+            "text": "Lightweight, responsive interfaces without unnecessary JavaScript.",
+            "icons": ["svelte", "alpine", "tailwind", "javascript", "html", "css"]
+        },
+        {
+            "title": "Databases",
+            "text": "Schema design, indexing, migrations, and query optimization.",
+            "icons": ["postgresql", "mysql", "sqlite"]
+        },
+        {
+            "title": "DevOps",
+            "text": "Containers, CI/CD, automated deployments, and server monitoring.",
+            "icons": ["docker", "linux", "bash", "nginx", "git", "githubactions"]
+        },
+        {
+            "title": "Identity & Access",
+            "text": "A single account infrastructure for the college and SSO across every service.",
+            "icons": ["keycloak"],
+            "chips": ["FreeIPA", "LDAP", "SSSD", "OIDC"]
+        },
+        {
+            "title": "Education",
+            "text": "Moodle plugins, interactive courses, and coaching students for competitions.",
+            "icons": ["moodle"],
+            "chips": ["Abilympics", "Professionalitet"]
+        },
+        {
+            "title": "Integrations",
+            "text": "Bots and service integrations that get rid of manual work.",
+            "icons": ["telegram"],
+            "chips": ["YouGile", "Max", "Moodle API"]
+        },
+        {
+            "title": "Leadership",
+            "text": "I run a department and plan the college's IT architecture.",
+            "chips": ["Digital transformation", "IT architecture", "Mentoring"]
+        }
+    ],
+
+    "work_heading": "Services already up and running",
+    "work_caption": "Web apps I designed and shipped to production",
+    "packages_heading": "NTCTE Unified Digital Infrastructure",
+    "packages_caption": "Open-source packages for the college's internal Laravel services: SSO, user directory, personal data protection",
+    "project_open": "Open",
+    "services": [
         {
             "name": "Emodrom",
-            "description": "A web app for a psychology-based party game about emotions: the host console, a projector display, and every player's screen update live over WebSocket.",
-            "url": "https://emodrom.repiev.space",
-            "repo": "https://github.com/ega22a/emodrom"
+            "badge": "Pet project",
+            "description": "A web app for a psychology-based party game about emotions: the host console, projector display, and players' screens update in real time.",
+            "image": "/assets/projects/emodrom.jpg",
+            "url": "https://emodrom.repiev.space/",
+            "tags": ["Laravel 13", "Reverb", "Alpine.js", "Tailwind 4"]
+        },
+        {
+            "name": "NTCTE website",
+            "badge": "nttek.ru",
+            "description": "The college's official website: news, documents, sections for applicants, students and parents, an accessible version, and a dark theme.",
+            "image": "/assets/projects/nttek.jpg",
+            "url": "https://nttek.ru/",
+            "tags": ["Laravel", "Alpine.js", "Tailwind CSS"]
+        },
+        {
+            "name": "Signatus",
+            "badge": "sig.nttek.ru",
+            "description": "The college's e-signature service: signing, previewing, and archiving documents with corporate accounts.",
+            "image": "/assets/projects/signatus.jpg",
+            "url": "https://sig.nttek.ru/",
+            "tags": ["Laravel", "PKI", "Alpine.js"]
         }
-    ]
+    ],
+    "packages": [
+        {
+            "name": "Transliteration",
+            "slug": "ntcte/transliteration",
+            "description": "Cyrillic transliteration per ICAO Doc 9303 and login generation for staff and students with free-login resolution.",
+            "url": "https://gitverse.ru/ntcte/transliteration"
+        },
+        {
+            "name": "Personal data classification",
+            "slug": "ntcte/pdn-classification",
+            "description": "Mark personal data fields with PHP attributes on models and DTOs, plus an artisan report for the information systems registry.",
+            "url": "https://gitverse.ru/ntcte/pdn-classification"
+        },
+        {
+            "name": "Keycloak JWT",
+            "slug": "ntcte/jwt-keycloak",
+            "description": "A stateless API guard: verifies Keycloak tokens via JWKS, RBAC on roles and FreeIPA groups, Back-Channel Logout.",
+            "url": "https://gitverse.ru/ntcte/jwt-keycloak"
+        },
+        {
+            "name": "FreeIPA directory",
+            "slug": "ntcte/freeipa-directory",
+            "description": "Resolves a user's full FreeIPA group chain by recursive membership traversal, with caching and fail-closed behavior.",
+            "url": "https://gitverse.ru/ntcte/freeipa-directory"
+        },
+        {
+            "name": "Personal data audit log",
+            "slug": "ntcte/audit-log",
+            "description": "Structured logging of personal data reads and writes with a single model trait, the basis for 152-FZ safeguards.",
+            "url": "https://gitverse.ru/ntcte/audit-log"
+        },
+        {
+            "name": "Unified API response",
+            "slug": "ntcte/api-response",
+            "description": "A data / meta / errors JSON envelope, end-to-end request_id, locale detection, and consistent exception rendering.",
+            "url": "https://gitverse.ru/ntcte/api-response"
+        }
+    ],
+    "packages_stack": "PHP 8.4 · Laravel 12 / 13",
+
+    "contact_kicker": "That's all for now.",
+    "contact_heading": "Got an idea or a project?\nLet's talk",
+    "contact_cta": "Get in touch",
+    "label_email": "Email",
+    "label_links": "Links",
+    "nttek": "NTCTE",
+    "label_telegram": "Telegram",
+    "footer_tagline": "your friendly order engineer",
+    "footer_name": "Georgeeeee",
+    "to_start": "Back to start",
+
+    "modal_title": "About me",
+    "modal_error": "Couldn't load the text. Please try again later.",
+    "close": "Close"
 }
