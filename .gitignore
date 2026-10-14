@@ -1,3 +1,11 @@
 node_modules/
 package-lock.json
 src/
+
+# Исходные личные фото — на сайт попадают только обработанные копии из assets/
+reference/
+
+# Системный мусор
+.DS_Store
+Thumbs.db
+.vscode/
