@@ -4,6 +4,7 @@
     "tagline": "Full-stack разработчик, DevOps-инженер и преподаватель. Строю цифровую инфраструктуру колледжа и делаю веб-сервисы, которыми удобно пользоваться",
     "role": "Full-stack · DevOps · Преподаватель",
     "hero_marquee": "Full-stack разработчик & преподаватель —",
+    "hero_alt": "Егор Репьев",
     "location": "Нижний Тагил, Россия",
 
     "nav_profile": "Профиль",
@@ -68,7 +69,7 @@
     "work_heading": "Сервисы, которые уже работают",
     "work_caption": "Веб-приложения, которые я спроектировал и запустил в продакшн",
     "packages_heading": "Единая цифровая инфраструктура НТТЭК",
-    "packages_caption": "Open-source пакеты для внутренних Laravel-сервисов колледжа: SSO, каталог пользователей, защита персональных данных",
+    "packages_caption": "Open-source пакеты и сервисы для внутренних Laravel-приложений колледжа: SSO, каталог пользователей, защита персональных данных, уведомления в Макс",
     "project_open": "Открыть",
     "services": [
         {
@@ -97,6 +98,19 @@
         }
     ],
     "packages": [
+        {
+            "name": "SDK для Макса",
+            "slug": "ntcte/max-platform",
+            "description": "PHP SDK для Bot API мессенджера Макс: типизированный клиент, роутинг бота, вебхуки и long polling, мосты для Laravel и Symfony.",
+            "url": "https://packagist.org/packages/ntcte/max-platform",
+            "stack": "PHP 8.3+ · Laravel / Symfony"
+        },
+        {
+            "name": "Рупор",
+            "slug": "ntcte/megaphone",
+            "description": "Хаб уведомлений ЕЦИ в Макс: общий бот колледжа, привязка сотрудников и доставка сообщений от сервисов по подписанному API.",
+            "stack": "PHP 8.5 · Laravel 13 · PostgreSQL"
+        },
         {
             "name": "Транслитерация",
             "slug": "ntcte/transliteration",
@@ -134,6 +148,7 @@
             "url": "https://gitverse.ru/ntcte/api-response"
         }
     ],
+    "package_private": "закрытый",
     "packages_stack": "PHP 8.4 · Laravel 12 / 13",
 
     "contact_kicker": "Пока на этом всё.",

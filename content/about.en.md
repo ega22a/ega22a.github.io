@@ -10,7 +10,7 @@ In my day-to-day work I:
 
 - lead digital transformation projects for educational programs and curricula;
 - build and maintain information systems with Laravel, Svelte, Alpine.js, and SQL, including the [college website](https://nttek.ru/) and the [Signatus](https://sig.nttek.ru/) e-signature service;
-- develop the "NTCTE Unified Digital Infrastructure", a set of [open-source packages](https://gitverse.ru/ntcte) for internal Laravel services: Keycloak SSO, FreeIPA directory, and personal-data access auditing under Russian Federal Law 152-FZ;
+- develop the "NTCTE Unified Digital Infrastructure", a set of [open-source packages](https://gitverse.ru/ntcte) for internal Laravel services: Keycloak SSO, FreeIPA directory, and personal-data access auditing under Russian Federal Law 152-FZ, a [PHP SDK for Max messenger bots](https://packagist.org/packages/ntcte/max-platform) and the Rupor notification hub built on it;
 - set up CI/CD pipelines, automated deployments, and infrastructure monitoring;
 - run the unified identity and access infrastructure: FreeIPA (multi-master), Keycloak SSO, and access-control (СКУД) synchronization via custom LDAP attributes;
 - oversee Moodle and other LMS platforms, including custom plugins and external integrations;

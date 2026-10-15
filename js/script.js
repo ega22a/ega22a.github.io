@@ -26,7 +26,6 @@ async function setLocale(newLocale) {
     renderServices();
     renderPackages();
     updateLangButton();
-    resetModal();
 
     document.documentElement.setAttribute('lang', newLocale);
 }
@@ -146,18 +145,23 @@ function renderServices() {
 
 function renderPackages() {
     renderList('packagesList', translations.packages, (pkg) => {
-        const card = externalLink(pkg.url, 'package-card');
+        // A package without a public repository is shown as a plain card with a badge
+        const card = pkg.url ? externalLink(pkg.url, 'package-card') : el('article', 'package-card is-private');
 
         const top = el('div', 'package-top');
         top.appendChild(el('code', 'package-slug', pkg.slug));
-        const arrow = el('span', 'circle-icon');
-        arrow.appendChild(icon('arrow-up-right'));
-        top.appendChild(arrow);
+        if (pkg.url) {
+            const arrow = el('span', 'circle-icon');
+            arrow.appendChild(icon('arrow-up-right'));
+            top.appendChild(arrow);
+        } else {
+            top.appendChild(el('span', 'package-badge', translations.package_private));
+        }
         card.appendChild(top);
 
         card.appendChild(el('h3', 'package-title', pkg.name));
         card.appendChild(el('p', 'package-text', pkg.description));
-        card.appendChild(el('p', 'package-stack', translations.packages_stack || ''));
+        card.appendChild(el('p', 'package-stack', pkg.stack || translations.packages_stack || ''));
         return card;
     });
 }
@@ -180,12 +184,7 @@ function bindLocaleSwitcher() {
 }
 
 // ── About modal (content is stored locally in /content) ─────────────────────
-
-let modalLoadedFor = null;
-
-function resetModal() {
-    modalLoadedFor = null;
-}
+// The Russian text is prerendered into index.html; data-locale marks what is loaded.
 
 function initModal() {
     const modal = document.getElementById('aboutModal');
@@ -197,7 +196,7 @@ function initModal() {
         modal.classList.add('active');
         closeModalBtn.focus();
 
-        if (modalLoadedFor === locale) return;
+        if (modalContent.dataset.locale === locale) return;
 
         const requestedLocale = locale;
         modalContent.innerHTML = '<div class="spinner"></div>';
@@ -212,8 +211,9 @@ function initModal() {
                 link.target = '_blank';
                 link.rel = 'noopener';
             });
-            modalLoadedFor = requestedLocale;
+            modalContent.dataset.locale = requestedLocale;
         } catch (error) {
+            delete modalContent.dataset.locale;
             modalContent.replaceChildren(el('p', 'modal-error', translations.modal_error));
         }
     });
@@ -283,11 +283,10 @@ function initHeroGallery() {
 // ── Slides ─────────────────────
 
 function initSlides() {
-    const slidesEl = document.querySelector('.slides');
     const slides = Array.from(document.querySelectorAll('.slide'));
     const dockItems = document.querySelectorAll('.dock-item[href]');
     const header = document.querySelector('.site-header');
-    if (!slidesEl || !slides.length) return;
+    if (!slides.length) return;
 
     let activeIndex = -1;
 
@@ -307,64 +306,23 @@ function initSlides() {
 
     setActive(0);
 
+    // The active slide is the one crossing the middle of the screen,
+    // which also works for slides taller than the viewport.
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
-            const visible = entries
-                .filter((entry) => entry.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            const visible = entries.find((entry) => entry.isIntersecting);
             if (visible) setActive(slides.indexOf(visible.target));
-        }, { root: slidesEl, threshold: 0.6 });
+        }, { rootMargin: '-50% 0px -50% 0px' });
 
         slides.forEach((slide) => observer.observe(slide));
     }
 
-    const goToIndex = (index) => {
-        const clamped = Math.max(0, Math.min(slides.length - 1, index));
-        slides[clamped].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-    };
-
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (e) => {
-            const index = slides.findIndex((slide) => `#${slide.id}` === link.getAttribute('href'));
-            if (index === -1) return;
+            const slide = slides.find((s) => `#${s.id}` === link.getAttribute('href'));
+            if (!slide) return;
             e.preventDefault();
-            goToIndex(index);
+            slide.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    });
-
-    // A vertical wheel / trackpad gesture flips one slide at a time,
-    // unless the current slide itself has content left to scroll.
-    // The lock is held until the gesture (including trackpad inertia) goes quiet.
-    let wheelLocked = false;
-    let wheelUnlockTimer;
-    slidesEl.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-
-        const slide = slides[activeIndex];
-        const canScrollDown = slide.scrollTop + slide.clientHeight < slide.scrollHeight - 1;
-        const canScrollUp = slide.scrollTop > 0;
-        if ((e.deltaY > 0 && canScrollDown) || (e.deltaY < 0 && canScrollUp)) return;
-
-        e.preventDefault();
-        clearTimeout(wheelUnlockTimer);
-        wheelUnlockTimer = setTimeout(() => { wheelLocked = false; }, 250);
-        if (wheelLocked || Math.abs(e.deltaY) < 4) return;
-        wheelLocked = true;
-        goToIndex(activeIndex + Math.sign(e.deltaY));
-    }, { passive: false });
-
-    document.addEventListener('keydown', (e) => {
-        if (document.getElementById('aboutModal').classList.contains('active')) return;
-        if (e.key === 'ArrowRight' || e.key === 'PageDown') {
-            e.preventDefault();
-            goToIndex(activeIndex + 1);
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            e.preventDefault();
-            goToIndex(activeIndex - 1);
-        } else if (e.key === 'Home') {
-            goToIndex(0);
-        } else if (e.key === 'End') {
-            goToIndex(slides.length - 1);
-        }
     });
 }

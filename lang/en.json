@@ -4,6 +4,7 @@
     "tagline": "Full-stack developer, DevOps engineer and lecturer. I build my college's digital infrastructure and web services that are a pleasure to use",
     "role": "Full-stack · DevOps · Lecturer",
     "hero_marquee": "Full-stack Developer & Lecturer —",
+    "hero_alt": "Egor Repiev",
     "location": "Nizhny Tagil, Russia",
 
     "nav_profile": "Profile",
@@ -68,7 +69,7 @@
     "work_heading": "Services already up and running",
     "work_caption": "Web apps I designed and shipped to production",
     "packages_heading": "NTCTE Unified Digital Infrastructure",
-    "packages_caption": "Open-source packages for the college's internal Laravel services: SSO, user directory, personal data protection",
+    "packages_caption": "Open-source packages and services for the college's internal Laravel apps: SSO, user directory, personal data protection, Max notifications",
     "project_open": "Open",
     "services": [
         {
@@ -97,6 +98,19 @@
         }
     ],
     "packages": [
+        {
+            "name": "Max SDK",
+            "slug": "ntcte/max-platform",
+            "description": "PHP SDK for the Max messenger Bot API: typed client, bot routing, webhooks and long polling, Laravel and Symfony bridges.",
+            "url": "https://packagist.org/packages/ntcte/max-platform",
+            "stack": "PHP 8.3+ · Laravel / Symfony"
+        },
+        {
+            "name": "Rupor",
+            "slug": "ntcte/megaphone",
+            "description": "Notification hub delivering messages to Max: one shared college bot, staff account linking and delivery for services over a signed API.",
+            "stack": "PHP 8.5 · Laravel 13 · PostgreSQL"
+        },
         {
             "name": "Transliteration",
             "slug": "ntcte/transliteration",
@@ -134,6 +148,7 @@
             "url": "https://gitverse.ru/ntcte/api-response"
         }
     ],
+    "package_private": "private",
     "packages_stack": "PHP 8.4 · Laravel 12 / 13",
 
     "contact_kicker": "That's all for now.",
