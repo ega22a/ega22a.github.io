@@ -893,6 +893,55 @@ svg:has(> use) {
     letter-spacing: 0.04em;
 }
 
+.dock-lang-wrap {
+    position: relative;
+    display: flex;
+}
+
+.lang-menu {
+    position: absolute;
+    bottom: calc(100% + 0.65rem);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 7.5rem;
+    padding: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(17, 17, 17, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.lang-menu[hidden] {
+    display: none;
+}
+
+.lang-menu-item {
+    padding: 0.55rem 0.65rem;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #a3a3a3;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-menu-item:hover {
+    background: #262626;
+    color: var(--white);
+}
+
+.lang-menu-item.is-active {
+    background: var(--white);
+    color: var(--ink);
+}
+
 /* ── Modal ─────────────────────── */
 .modal-overlay {
     position: fixed;

@@ -177,19 +177,59 @@ function renderPackages() {
 
 // ── Locale switcher ─────────────────────
 
-function nextLocale() {
-    const currentIndex = supportedLocales.indexOf(locale);
-    return supportedLocales[(currentIndex + 1) % supportedLocales.length];
-}
+// Native names so users can always find their own language regardless of the UI language.
+const localeNames = { ru: 'Русский', en: 'English', zh: '中文' };
 
 function updateLangButton() {
     const btn = document.querySelector('[data-i18n-switcher]');
-    if (btn) btn.textContent = nextLocale().toUpperCase();
+    if (btn) btn.textContent = locale.toUpperCase();
+    document.querySelectorAll('.lang-menu-item').forEach((item) => {
+        item.classList.toggle('is-active', item.dataset.setLocale === locale);
+    });
 }
 
 function bindLocaleSwitcher() {
-    const switcher = document.querySelector('[data-i18n-switcher]');
-    if (switcher) switcher.addEventListener('click', () => setLocale(nextLocale()));
+    const wrap = document.querySelector('.dock-lang-wrap');
+    const btn = document.querySelector('[data-i18n-switcher]');
+    const menu = wrap?.querySelector('.lang-menu');
+    if (!wrap || !btn || !menu) return;
+
+    menu.replaceChildren(...supportedLocales.map((code) => {
+        const item = el('button', 'lang-menu-item', localeNames[code] || code);
+        item.type = 'button';
+        item.dataset.setLocale = code;
+        return item;
+    }));
+
+    const close = () => {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+    };
+
+    btn.addEventListener('click', () => {
+        const open = menu.hidden;
+        menu.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+    });
+
+    menu.addEventListener('click', (e) => {
+        const item = e.target.closest('[data-set-locale]');
+        if (!item) return;
+        setLocale(item.dataset.setLocale);
+        close();
+        btn.focus();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!wrap.contains(e.target)) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.hidden) {
+            close();
+            btn.focus();
+        }
+    });
 }
 
 // ── About modal (content is stored locally in /content) ─────────────────────
