@@ -50,7 +50,7 @@
     --accent: #455ce9;
     --accent-hover: #3449cc;
 
-    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
     --gutter: clamp(1.25rem, 5vw, 5rem);
@@ -457,6 +457,12 @@ svg:has(> use) {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.9rem;
 }
 
@@ -1031,6 +1037,7 @@ svg:has(> use) {
 /* ── Responsive ─────────────────────── */
 @media (max-width: 1100px) {
     .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ai-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .packages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -1058,6 +1065,7 @@ svg:has(> use) {
 @media (max-width: 600px) {
     :root { --dock-space: 5.5rem; }
     .skills-grid,
+    .ai-grid,
     .packages-grid { grid-template-columns: minmax(0, 1fr); }
     .contact-cta { right: 0; }
     .contact-details { flex-direction: column; margin-top: 5.5rem; }

@@ -26,9 +26,10 @@ In my day-to-day work I:
 - **DevOps:** Docker, Linux, Bash, Nginx, Git, CI/CD
 - **Identity & Access:** FreeIPA, Keycloak (SSO/OIDC), SSSD, LDAP
 - **Integrations:** Telegram bots, YouGile, Max, Moodle API
+- **AI:** Xiaomi MiMo (MiMo Code), Claude (Claude Code), OpenAI (ChatGPT, Codex)
 
 ## In my spare time
 
 I build pet projects, such as [Emodrom](https://emodrom.repiev.space/), a web app for a psychology-based party game about emotions.
 
-Open to collaboration, knowledge sharing, and joint projects in IT and education. Reach me on [Telegram](https://ega22a.t.me) or by [email](mailto:repev.egor@nttek.ru).
+Open to collaboration, knowledge sharing, and joint projects in IT and education. Reach me on [Telegram](https://ega22a.t.me), subscribe to my [Max channel](https://max.ru/channel_ega22a), or by [email](mailto:repev.egor@nttek.ru).

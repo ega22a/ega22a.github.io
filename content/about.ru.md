@@ -26,9 +26,10 @@
 - **DevOps:** Docker, Linux, Bash, Nginx, Git, CI/CD
 - **Identity & Access:** FreeIPA, Keycloak (SSO/OIDC), SSSD, LDAP
 - **Интеграции:** Telegram-боты, YouGile, Max, Moodle API
+- **ИИ:** Xiaomi MiMo (MiMo Code), Claude (Claude Code), OpenAI (ChatGPT, Codex)
 
 ## В свободное время
 
 Делаю пет-проекты — например, [«Эмодром»](https://emodrom.repiev.space/), веб-сервис для психологической party-игры про эмоции.
 
-Открыт к сотрудничеству, обмену опытом и совместным проектам в ИТ и образовании. Пишите в [Telegram](https://ega22a.t.me) или на [почту](mailto:repev.egor@nttek.ru).
+Открыт к сотрудничеству, обмену опытом и совместным проектам в ИТ и образовании. Пишите в [Telegram](https://ega22a.t.me), подписывайтесь на [канал в Максе](https://max.ru/channel_ega22a) или на [почту](mailto:repev.egor@nttek.ru).

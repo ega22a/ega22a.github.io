@@ -1,0 +1,194 @@
+{
+    "fullname": "叶戈尔·列皮耶夫",
+    "signature": "© 代码 — 叶戈尔·列皮耶夫",
+    "tagline": "全栈开发者、DevOps 工程师和教师。搭建学院的数字基础设施，打造好用的 Web 服务",
+    "role": "全栈 · DevOps · 教师",
+    "hero_marquee": "全栈开发者 & 教师 —",
+    "hero_alt": "叶戈尔·列皮耶夫",
+    "location": "下塔吉尔，俄罗斯",
+
+    "nav_profile": "主页",
+    "nav_about": "关于",
+    "nav_skills": "技能",
+    "nav_ai": "AI",
+    "nav_work": "项目",
+    "nav_packages": "软件包",
+    "nav_contact": "联系",
+
+    "about_statement": "在教育领域开发并落地数字化方案：从学院网站和电子签名服务，到基于 FreeIPA 和 Keycloak 的统一身份基础设施。我喜欢把复杂的事情做得简单。",
+    "position": "下塔吉尔贸易经济学院信息韧性与数字创新系主任、教师",
+    "about_more": "了解更多",
+
+    "skills_heading": "支撑一切的技能",
+    "skills": [
+        {
+            "title": "后端",
+            "text": "基于 Laravel 的 Web 应用与 API：从领域逻辑到实时 WebSocket。",
+            "icons": ["php", "laravel"],
+            "chips": ["REST", "Eloquent", "Reverb", "Laravel Data"]
+        },
+        {
+            "title": "前端",
+            "text": "轻量、响应迅速的界面，不带多余的 JavaScript。",
+            "icons": ["svelte", "alpine", "tailwind", "javascript", "html", "css"]
+        },
+        {
+            "title": "数据库",
+            "text": "表结构设计、索引、迁移与查询优化。",
+            "icons": ["postgresql", "mysql", "sqlite"]
+        },
+        {
+            "title": "DevOps",
+            "text": "容器、CI/CD、自动部署与服务器监控。",
+            "icons": ["docker", "linux", "bash", "nginx", "git", "githubactions"]
+        },
+        {
+            "title": "身份与访问",
+            "text": "学院统一账号基础设施，为所有服务提供单点登录。",
+            "icons": ["keycloak"],
+            "chips": ["FreeIPA", "LDAP", "SSSD", "OIDC"]
+        },
+        {
+            "title": "教育",
+            "text": "Moodle 插件、互动课程，以及指导学生参加职业技能大赛。",
+            "icons": ["moodle"],
+            "chips": ["Abilympics", "Professionalitet"]
+        },
+        {
+            "title": "集成",
+            "text": "机器人与服务集成，把重复劳动自动化。",
+            "icons": ["telegram"],
+            "chips": ["YouGile", "Max", "Moodle API"]
+        },
+        {
+            "title": "管理",
+            "text": "负责系部工作，规划学院的 IT 架构。",
+            "chips": ["数字化转型", "IT 架构", "导师指导"]
+        }
+    ],
+
+    "ai_heading": "AI 使用经验",
+    "ai_caption": "我在开发与教学中日常使用的工具",
+    "ai": [
+        {
+            "title": "Xiaomi MiMo",
+            "text": "开发中的日常智能体：把重构、评审和杂活交给它，我专注于架构。",
+            "icons": ["xiaomi"],
+            "chips": ["MiMo Code", "智能体工作流", "代码评审"]
+        },
+        {
+            "title": "Claude",
+            "text": "复杂任务的第二驾驶舱：结对编程、深入代码库梳理，长会话也不丢失上下文。",
+            "icons": ["claude"],
+            "chips": ["Claude Code", "结对编程", "遗留代码梳理"]
+        },
+        {
+            "title": "OpenAI",
+            "text": "ChatGPT 用于调研、草稿和快速验证；Codex 用于代码生成和仓库中的自主任务。",
+            "icons": ["openai"],
+            "chips": ["ChatGPT", "Codex", "调研"]
+        }
+    ],
+
+    "work_heading": "已上线的服务",
+    "work_caption": "我设计并投入生产的 Web 应用",
+    "packages_heading": "NTCTE 统一数字基础设施",
+    "packages_caption": "面向学院内部 Laravel 应用的开源包与服务：SSO、用户目录、个人数据保护、Max 通知",
+    "project_open": "打开",
+    "services": [
+        {
+            "name": "Emodrom",
+            "badge": "个人项目",
+            "description": "心理学情绪主题派对游戏的 Web 服务：主持人控制台、投影大屏和玩家屏幕实时同步更新。",
+            "image": "/assets/projects/emodrom.jpg",
+            "url": "https://emodrom.repiev.space/",
+            "tags": ["Laravel 13", "Reverb", "Alpine.js", "Tailwind 4"]
+        },
+        {
+            "name": "学院网站",
+            "badge": "nttek.ru",
+            "description": "学院官方网站：新闻、文件、招生与学生家长专区，支持无障碍版本和深色主题。",
+            "image": "/assets/projects/nttek.jpg",
+            "url": "https://nttek.ru/",
+            "tags": ["Laravel", "Alpine.js", "Tailwind CSS"]
+        },
+        {
+            "name": "Signatus",
+            "badge": "sig.nttek.ru",
+            "description": "学院电子签名服务：使用企业账号签署、查看和归档文件。",
+            "image": "/assets/projects/signatus.jpg",
+            "url": "https://sig.nttek.ru/",
+            "tags": ["Laravel", "PKI", "Alpine.js"]
+        }
+    ],
+    "packages": [
+        {
+            "name": "Max SDK",
+            "slug": "ntcte/max-platform",
+            "description": "Max 即时通讯 Bot API 的 PHP SDK：强类型客户端、机器人路由、Webhook 与长轮询，内置 Laravel 和 Symfony 桥接。",
+            "url": "https://packagist.org/packages/ntcte/max-platform",
+            "stack": "PHP 8.3+ · Laravel / Symfony"
+        },
+        {
+            "name": "Rupor",
+            "slug": "ntcte/megaphone",
+            "description": "面向 Max 的通知中枢：学院统一机器人、员工账号绑定，各服务通过签名 API 投递消息。",
+            "stack": "PHP 8.5 · Laravel 13 · PostgreSQL"
+        },
+        {
+            "name": "音译",
+            "slug": "ntcte/transliteration",
+            "description": "按 ICAO Doc 9303 转写西里尔字母，为师生生成登录名并自动挑选可用账号。",
+            "url": "https://gitverse.ru/ntcte/transliteration"
+        },
+        {
+            "name": "个人数据分类",
+            "slug": "ntcte/pdn-classification",
+            "description": "用 PHP 特性在模型和 DTO 上标注个人数据字段，并生成信息系统登记报表。",
+            "url": "https://gitverse.ru/ntcte/pdn-classification"
+        },
+        {
+            "name": "Keycloak JWT",
+            "slug": "ntcte/jwt-keycloak",
+            "description": "API 无状态守卫：通过 JWKS 校验 Keycloak 令牌，基于角色和 FreeIPA 组的 RBAC，支持 Back-Channel Logout。",
+            "url": "https://gitverse.ru/ntcte/jwt-keycloak"
+        },
+        {
+            "name": "FreeIPA 目录",
+            "slug": "ntcte/freeipa-directory",
+            "description": "递归遍历成员关系，解析用户的完整 FreeIPA 组链，带缓存与 fail-closed 行为。",
+            "url": "https://gitverse.ru/ntcte/freeipa-directory"
+        },
+        {
+            "name": "个人数据审计日志",
+            "slug": "ntcte/audit-log",
+            "description": "通过一个模型 Trait 结构化记录个人数据的读写操作——152-FZ 保护措施的基础。",
+            "url": "https://gitverse.ru/ntcte/audit-log"
+        },
+        {
+            "name": "统一 API 响应",
+            "slug": "ntcte/api-response",
+            "description": "data / meta / errors 的 JSON 信封，端到端 request_id，语言识别与统一异常渲染。",
+            "url": "https://gitverse.ru/ntcte/api-response"
+        }
+    ],
+    "package_private": "闭源",
+    "packages_stack": "PHP 8.4 · Laravel 12 / 13",
+
+    "contact_kicker": "暂时就到这里。",
+    "contact_heading": "有想法或项目？\n聊聊吧",
+    "contact_cta": "联系我",
+    "label_email": "邮箱",
+    "label_links": "链接",
+    "nttek": "NTCTE",
+    "label_telegram": "Telegram",
+    "label_max": "Max",
+    "max_channel": "Max 频道",
+    "footer_tagline": "你友好的秩序工程师",
+    "footer_name": "叶戈尔尔尔尔尔",
+    "to_start": "回到顶部",
+
+    "modal_title": "关于我",
+    "modal_error": "文本加载失败，请稍后再试。",
+    "close": "关闭"
+}

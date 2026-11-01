@@ -1,7 +1,7 @@
 document.documentElement.classList.add('js');
 
 const defaultLocale = 'ru';
-const supportedLocales = ['ru', 'en'];
+const supportedLocales = ['ru', 'en', 'zh'];
 
 let locale;
 let translations = {};
@@ -23,6 +23,7 @@ async function setLocale(newLocale) {
 
     translatePage();
     renderSkills();
+    renderAi();
     renderServices();
     renderPackages();
     updateLangButton();
@@ -82,8 +83,8 @@ function renderList(containerId, items, renderItem) {
     container.replaceChildren(...items.map(renderItem));
 }
 
-function renderSkills() {
-    renderList('skillsList', translations.skills, (skill) => {
+function renderSkillCards(containerId, items) {
+    renderList(containerId, items, (skill) => {
         const card = el('article', 'skill-card');
 
         if (skill.icons?.length) {
@@ -112,6 +113,14 @@ function renderSkills() {
         card.appendChild(el('p', 'skill-text', skill.text));
         return card;
     });
+}
+
+function renderSkills() {
+    renderSkillCards('skillsList', translations.skills);
+}
+
+function renderAi() {
+    renderSkillCards('aiList', translations.ai);
 }
 
 function renderServices() {

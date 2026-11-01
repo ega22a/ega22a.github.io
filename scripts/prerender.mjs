@@ -1,4 +1,4 @@
-// Writes the Russian skills, services, packages and "about" markup straight into index.html,
+// Writes the Russian skills, AI, services, packages and "about" markup straight into index.html,
 // so search engines get the full page without running JavaScript.
 // The markup mirrors renderSkills / renderServices / renderPackages in js/script.js.
 //
@@ -55,6 +55,7 @@ const pkg = (p) => [
 
 const blocks = {
     skills: t.skills.map(skill),
+    ai: t.ai.map(skill),
     services: t.services.map(service),
     packages: t.packages.map(pkg),
     about: [marked.parse(await readFile(new URL('content/about.ru.md', root), 'utf8'))

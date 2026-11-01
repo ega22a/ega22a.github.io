@@ -10,6 +10,7 @@
     "nav_profile": "Profile",
     "nav_about": "About",
     "nav_skills": "Skills",
+    "nav_ai": "AI",
     "nav_work": "Projects",
     "nav_packages": "Packages",
     "nav_contact": "Contact",
@@ -63,6 +64,29 @@
             "title": "Leadership",
             "text": "I run a department and plan the college's IT architecture.",
             "chips": ["Digital transformation", "IT architecture", "Mentoring"]
+        }
+    ],
+
+    "ai_heading": "Experience with AI",
+    "ai_caption": "The tools I use day to day in development and teaching",
+    "ai": [
+        {
+            "title": "Xiaomi MiMo",
+            "text": "My everyday agent for development: I delegate refactoring, reviews and routine work while keeping my focus on architecture.",
+            "icons": ["xiaomi"],
+            "chips": ["MiMo Code", "Agentic workflows", "Code review"]
+        },
+        {
+            "title": "Claude",
+            "text": "A co-pilot for hard problems: pair programming, deep dives into the codebase and long sessions without losing context.",
+            "icons": ["claude"],
+            "chips": ["Claude Code", "Pair programming", "Legacy archaeology"]
+        },
+        {
+            "title": "OpenAI",
+            "text": "ChatGPT for research, drafts and quick checks; Codex for code generation and autonomous tasks in the repository.",
+            "icons": ["openai"],
+            "chips": ["ChatGPT", "Codex", "Research"]
         }
     ],
 
@@ -158,6 +182,8 @@
     "label_links": "Links",
     "nttek": "NTCTE",
     "label_telegram": "Telegram",
+    "label_max": "Max",
+    "max_channel": "Max channel",
     "footer_tagline": "your friendly order engineer",
     "footer_name": "Georgeeeee",
     "to_start": "Back to start",
